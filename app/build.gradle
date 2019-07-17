@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+
+    final def versionDev = '1'
+
+    defaultConfig {
+        applicationId "com.example.n1pagination"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        setProperty("archivesBaseName", "app-$versionName.$versionDev")
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            applicationIdSuffix ".debug"
+            versionNameSuffix "." + versionDev + "_dev"
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+       ext {
+        retrofit_version = '2.3.0'
+    }
+    //implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
+    implementation 'androidx.core:core-ktx:1.2.0-alpha02'
+    implementation 'com.android.support:recyclerview-v7:28.1.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    // RxJava & RxAndroid
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.1'
+
+    //common dependencies
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    //Arch
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    implementation "android.arch.persistence.room:rxjava2:1.1.1"
+    kapt "android.arch.lifecycle:compiler:1.1.1"
+    kapt "android.arch.persistence.room:compiler:1.1.1"
+
+    implementation "android.arch.lifecycle:runtime:1.1.1"
+    kapt "android.arch.lifecycle:compiler:1.1.1"
+    implementation "android.arch.lifecycle:common-java8:1.1.1"
+
+    //di
+    implementation 'com.google.dagger:dagger:2.22.1'
+    kapt 'com.google.dagger:dagger-compiler:2.22.1'
+
+    //fonts
+    implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.9@aar') {
+        transitive = true
+    }
+}

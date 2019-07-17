@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+            app:cardCornerRadius="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/flatOfferCardBackgroundColor"
+            android:layout_marginBottom="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp">
+
+            <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/vpPhotos"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"/>
+
+            <ImageView
+                    android:id="@+id/ivNoPhoto"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="match_parent"
+                    android:src="@drawable/no_photo"
+                    android:scaleType="centerInside"
+                    android:contentDescription="@null"
+                    android:layout_height="180dp"/>
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cvPhotoNumberHolder"
+                    app:cardCornerRadius="2dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/vpPhotos"
+                    app:layout_constraintEnd_toEndOf="@+id/vpPhotos"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="@color/shadowColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/tvPhotoNumber"
+                        app:layout_constraintBottom_toBottomOf="@+id/vpPhotos"
+                        app:layout_constraintEnd_toEndOf="@+id/vpPhotos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:textColor="@color/whiteTextColor"/>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vpPhotos"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+            />
+
+            <TextView
+                    android:id="@+id/tvAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPrice"
+                    android:textSize="14sp"
+                    android:layout_marginStart="16dp"
+            />
+
+            <TextView
+                    android:id="@+id/tvArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+                    android:textSize="14sp"
+                    android:layout_marginStart="16dp"
+            />
+
+            <TextView
+                    android:id="@+id/tvDivider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/tvArea"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+                    android:textSize="14sp"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/divider"
+            />
+
+            <TextView
+                    android:id="@+id/tvFloor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/tvDivider"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+                    android:textSize="14sp"
+                    android:layout_marginStart="6dp"
+            />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

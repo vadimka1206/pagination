@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">N1Pagination</string>
+    <string name="price_template">%1$s ₽</string>
+    <string name="area_template">%1$d / %2$d / %3$d м&#178;</string>
+    <string name="address_template">%1$d-к, %2$s, %3$s</string>
+    <string name="floors_template">Этаж %1$d из %2$d</string>
+    <string name="photos_number_template">%1$d / %2$d</string>
+    <string name="error_no_connection">Сервер в данный момент недоступен, попробуйте позже</string>
+</resources>
